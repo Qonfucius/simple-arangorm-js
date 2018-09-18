@@ -1,6 +1,6 @@
 {
   "name": "simple-arangorm",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple Arango ORM",
   "main": "index.js",
   "scripts": {
@@ -9,19 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HungryUp/simple-arangorm-js.git"
+    "url": "git+https://github.com/Qonfucius/simple-arangorm-js.git"
   },
   "keywords": [
     "arangoDB"
   ],
-  "author": "HungryUp",
+  "author": "Qonfucius",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/HungryUp/simple-arangorm-js/issues"
+    "url": "https://github.com/Qonfucius/simple-arangorm-js/issues"
   },
-  "homepage": "https://github.com/HungryUp/simple-arangorm-js#readme",
+  "homepage": "https://github.com/Qonfucius/simple-arangorm-js#readme",
   "dependencies": {
-    "arangojs": "github:arangodb/arangojs",
+    "arangojs": "^6.6.0",
     "dashify": "^1.0.0",
     "joi": "^13.6.0",
     "lodash.clone": "^4.5.0",
