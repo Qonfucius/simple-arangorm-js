@@ -1,4 +1,4 @@
-const qb = require('aqb');
+const { aql } = require('arangojs');
 const AbstractModel = require('./abstract');
 
 module.exports = class AbstractDocument extends AbstractModel {
@@ -52,15 +52,13 @@ module.exports = class AbstractDocument extends AbstractModel {
     return array.map(o => this.new.replace(o));
   }
 
-  static async count(filters = {}) {
-    const COL_NAME = 'col';
-    const COUNTER = 'count';
-    let queryBuilder = qb.for(COL_NAME).in(this.collectionName);
-    if (this.buildCountFilters || this.buildFilters) {
-      queryBuilder = (this.buildCountFilters || this.buildFilters)(queryBuilder, filters);
-    }
-    queryBuilder = queryBuilder.collectWithCountInto(COUNTER).return(COUNTER);
-    const query = await this.query(queryBuilder);
+  static async count() {
+    const query = await this.query(aql`
+      RETURN LENGTH(
+        FOR d IN ${this.collection}
+          RETURN 1
+      )
+    `);
     const [count] = await query.all();
     return count;
   }
