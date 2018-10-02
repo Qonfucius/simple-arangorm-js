@@ -99,8 +99,14 @@ module.exports = class Abstract {
     }
   }
 
-  static configure(dbConfig) {
+  static async configure(dbConfig = {}) {
     this.db = dbConfig;
+    if (dbConfig.database) {
+      this.db.useDatabase(dbConfig.database)
+    }
+    if (dbConfig.user && dbConfig.password) {
+      await this.db.login(dbConfig.user, dbConfig.password)
+    }
     return this;
   }
 

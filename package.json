@@ -1,6 +1,6 @@
 {
   "name": "simple-arangorm",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simple Arango ORM",
   "main": "index.js",
   "scripts": {
@@ -23,13 +23,13 @@
   "dependencies": {
     "arangojs": "^6.6.0",
     "dashify": "^1.0.0",
-    "joi": "^13.6.0",
+    "joi": "^13.7.0",
     "lodash.clone": "^4.5.0",
     "lodash.merge": "^4.6.1",
     "lodash.pick": "^4.4.0"
   },
   "devDependencies": {
-    "eslint": "^5.6.0",
+    "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
   }
